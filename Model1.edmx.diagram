@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="414d93991fca4407a36d9b2b063c5792" Name="Diagram1">
+        <EntityTypeShape EntityType="vkr_Otdel_KadrovModel.Category" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="vkr_Otdel_KadrovModel.Department" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="vkr_Otdel_KadrovModel.DepartmentType" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="vkr_Otdel_KadrovModel.Employees" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="vkr_Otdel_KadrovModel.EmployeeStatuses" Width="1.5" PointX="7.5" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="vkr_Otdel_KadrovModel.EmployeeStatusType" Width="1.5" PointX="3" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="vkr_Otdel_KadrovModel.EmployeeVerification" Width="1.5" PointX="12.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="vkr_Otdel_KadrovModel.EmployeeVerificationResult" Width="1.5" PointX="10" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="vkr_Otdel_KadrovModel.HRmanager" Width="1.5" PointX="8.25" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="vkr_Otdel_KadrovModel.MedicalCommission" Width="1.5" PointX="10" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="vkr_Otdel_KadrovModel.MedicalCommissionType" Width="1.5" PointX="7.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="vkr_Otdel_KadrovModel.Positions" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="vkr_Otdel_KadrovModel.Rate" Width="1.5" PointX="10.5" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="vkr_Otdel_KadrovModel.RateType" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="vkr_Otdel_KadrovModel.Status" Width="1.5" PointX="5.25" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="vkr_Otdel_KadrovModel.Title" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="vkr_Otdel_KadrovModel.TypePositions" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="vkr_Otdel_KadrovModel.FK_Employees_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="vkr_Otdel_KadrovModel.FK_HRmanager_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="vkr_Otdel_KadrovModel.FK_Department_DepartmentType" ManuallyRouted="false" />
+        <AssociationConnector Association="vkr_Otdel_KadrovModel.FK_Positions_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="vkr_Otdel_KadrovModel.FK_Employees_Title" ManuallyRouted="false" />
+        <AssociationConnector Association="vkr_Otdel_KadrovModel.FK_EmployeeStatuses_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="vkr_Otdel_KadrovModel.FK_Rate_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="vkr_Otdel_KadrovModel.FK_EmployeeStatuses_Positions" ManuallyRouted="false" />
+        <AssociationConnector Association="vkr_Otdel_KadrovModel.FK_EmployeeStatuses_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="vkr_Otdel_KadrovModel.FK_Status_EmployeeStatusType" ManuallyRouted="false" />
+        <AssociationConnector Association="vkr_Otdel_KadrovModel.FK_EmployeeVerification_EmployeeVerificationResult" ManuallyRouted="false" />
+        <AssociationConnector Association="vkr_Otdel_KadrovModel.FK_EmployeeVerification_MedicalCommission" ManuallyRouted="false" />
+        <AssociationConnector Association="vkr_Otdel_KadrovModel.FK_HRmanager_Title" ManuallyRouted="false" />
+        <AssociationConnector Association="vkr_Otdel_KadrovModel.FK_MedicalCommission_MedicalCommissionType" ManuallyRouted="false" />
+        <AssociationConnector Association="vkr_Otdel_KadrovModel.FK_Positions_TypePositions" ManuallyRouted="false" />
+        <AssociationConnector Association="vkr_Otdel_KadrovModel.FK_Rate_Positions" ManuallyRouted="false" />
+        <AssociationConnector Association="vkr_Otdel_KadrovModel.FK_Rate_RateType" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

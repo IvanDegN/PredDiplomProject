@@ -1,0 +1,1137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище vkr_Otdel_KadrovModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="IdCategory" />
+          </Key>
+          <Property Name="IdCategory" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TitleCategory" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="IdDepartment" />
+          </Key>
+          <Property Name="IdDepartment" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TitleDepartment" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdDepartmentType" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DepartmentType">
+          <Key>
+            <PropertyRef Name="IdDepartmentType" />
+          </Key>
+          <Property Name="IdDepartmentType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TitleDepartmentType" Type="nvarchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="IdEmployees" />
+          </Key>
+          <Property Name="IdEmployees" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ServiceNumber" Type="int" Nullable="false" />
+          <Property Name="SurName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateOfBirth" Type="date" Nullable="false" />
+          <Property Name="NumberPhone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdCategory" Type="int" Nullable="false" />
+          <Property Name="IdTitle" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmployeeStatuses">
+          <Key>
+            <PropertyRef Name="IdEmployeeStatuses" />
+          </Key>
+          <Property Name="IdEmployeeStatuses" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdEmployee" Type="int" Nullable="false" />
+          <Property Name="IdStatus" Type="int" Nullable="false" />
+          <Property Name="IdPosition" Type="int" Nullable="false" />
+          <Property Name="ChangeDate" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmployeeStatusType">
+          <Key>
+            <PropertyRef Name="IdEmployeeStatusType" />
+          </Key>
+          <Property Name="IdEmployeeStatusType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TitleEmployeeStatusType" Type="nvarchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmployeeVerification">
+          <Key>
+            <PropertyRef Name="IdEmployeeVerification" />
+          </Key>
+          <Property Name="IdEmployeeVerification" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdEmployees" Type="int" Nullable="false" />
+          <Property Name="StartVerification" Type="date" Nullable="false" />
+          <Property Name="IdHRmanager" Type="int" Nullable="false" />
+          <Property Name="Fingerprinting" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="PsychophysiologicalExamination" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="IdMedicalCommission" Type="int" Nullable="false" />
+          <Property Name="IdEmployeeVerificationResult" Type="int" Nullable="false" />
+          <Property Name="Note" Type="nvarchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmployeeVerificationResult">
+          <Key>
+            <PropertyRef Name="IdEmployeeVerificationResult" />
+          </Key>
+          <Property Name="IdEmployeeVerificationResult" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeVerificationResult" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HRmanager">
+          <Key>
+            <PropertyRef Name="IdHRmanager" />
+          </Key>
+          <Property Name="IdHRmanager" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ServiceNumber" Type="int" Nullable="false" />
+          <Property Name="SurName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateOfBirth" Type="date" Nullable="false" />
+          <Property Name="NumberPhone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdCategory" Type="int" Nullable="false" />
+          <Property Name="IdTitle" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MedicalCommission">
+          <Key>
+            <PropertyRef Name="IdMedicalCommission" />
+          </Key>
+          <Property Name="IdMedicalCommission" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MedicalCommissionTitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdMedicalCommissionType" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MedicalCommissionType">
+          <Key>
+            <PropertyRef Name="IdMedicalCommissionType" />
+          </Key>
+          <Property Name="IdMedicalCommissionType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MedicalCommissionType" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Positions">
+          <Key>
+            <PropertyRef Name="IdPositions" />
+          </Key>
+          <Property Name="IdPositions" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ActualName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NameByState" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TotalBid" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="IdTypePositions" Type="int" Nullable="false" />
+          <Property Name="IdDepartment" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rate">
+          <Key>
+            <PropertyRef Name="IdRate" />
+          </Key>
+          <Property Name="IdRate" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TitleRate" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="IdPositions" Type="int" Nullable="false" />
+          <Property Name="IdEmployees" Type="int" Nullable="false" />
+          <Property Name="IdRateType" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RateType">
+          <Key>
+            <PropertyRef Name="IdRateType" />
+          </Key>
+          <Property Name="IdRateType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RateTypeTitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="IdStatus" />
+          </Key>
+          <Property Name="IdStatus" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TitleStatus" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="IdEmployeeStatusType" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Title">
+          <Key>
+            <PropertyRef Name="IdTitle" />
+          </Key>
+          <Property Name="IdTitle" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AcademicTitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TypePositions">
+          <Key>
+            <PropertyRef Name="IdTypePositions" />
+          </Key>
+          <Property Name="IdTypePositions" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypePositions" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Department_DepartmentType">
+          <End Role="DepartmentType" Type="Self.DepartmentType" Multiplicity="1" />
+          <End Role="Department" Type="Self.Department" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DepartmentType">
+              <PropertyRef Name="IdDepartmentType" />
+            </Principal>
+            <Dependent Role="Department">
+              <PropertyRef Name="IdDepartmentType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="IdCategory" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="IdCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_Title">
+          <End Role="Title" Type="Self.Title" Multiplicity="1" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Title">
+              <PropertyRef Name="IdTitle" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="IdTitle" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeStatuses_Employees">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+          <End Role="EmployeeStatuses" Type="Self.EmployeeStatuses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="IdEmployees" />
+            </Principal>
+            <Dependent Role="EmployeeStatuses">
+              <PropertyRef Name="IdEmployee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeStatuses_Positions">
+          <End Role="Positions" Type="Self.Positions" Multiplicity="1" />
+          <End Role="EmployeeStatuses" Type="Self.EmployeeStatuses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Positions">
+              <PropertyRef Name="IdPositions" />
+            </Principal>
+            <Dependent Role="EmployeeStatuses">
+              <PropertyRef Name="IdPosition" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeStatuses_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="1" />
+          <End Role="EmployeeStatuses" Type="Self.EmployeeStatuses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="IdStatus" />
+            </Principal>
+            <Dependent Role="EmployeeStatuses">
+              <PropertyRef Name="IdStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeVerification_EmployeeVerificationResult">
+          <End Role="EmployeeVerificationResult" Type="Self.EmployeeVerificationResult" Multiplicity="1" />
+          <End Role="EmployeeVerification" Type="Self.EmployeeVerification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeVerificationResult">
+              <PropertyRef Name="IdEmployeeVerificationResult" />
+            </Principal>
+            <Dependent Role="EmployeeVerification">
+              <PropertyRef Name="IdEmployeeVerificationResult" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeVerification_MedicalCommission">
+          <End Role="MedicalCommission" Type="Self.MedicalCommission" Multiplicity="1" />
+          <End Role="EmployeeVerification" Type="Self.EmployeeVerification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MedicalCommission">
+              <PropertyRef Name="IdMedicalCommission" />
+            </Principal>
+            <Dependent Role="EmployeeVerification">
+              <PropertyRef Name="IdMedicalCommission" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HRmanager_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="HRmanager" Type="Self.HRmanager" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="IdCategory" />
+            </Principal>
+            <Dependent Role="HRmanager">
+              <PropertyRef Name="IdCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HRmanager_Title">
+          <End Role="Title" Type="Self.Title" Multiplicity="1" />
+          <End Role="HRmanager" Type="Self.HRmanager" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Title">
+              <PropertyRef Name="IdTitle" />
+            </Principal>
+            <Dependent Role="HRmanager">
+              <PropertyRef Name="IdTitle" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MedicalCommission_MedicalCommissionType">
+          <End Role="MedicalCommissionType" Type="Self.MedicalCommissionType" Multiplicity="1" />
+          <End Role="MedicalCommission" Type="Self.MedicalCommission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MedicalCommissionType">
+              <PropertyRef Name="IdMedicalCommissionType" />
+            </Principal>
+            <Dependent Role="MedicalCommission">
+              <PropertyRef Name="IdMedicalCommissionType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Positions_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="Positions" Type="Self.Positions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="IdDepartment" />
+            </Principal>
+            <Dependent Role="Positions">
+              <PropertyRef Name="IdDepartment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Positions_TypePositions">
+          <End Role="TypePositions" Type="Self.TypePositions" Multiplicity="1" />
+          <End Role="Positions" Type="Self.Positions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypePositions">
+              <PropertyRef Name="IdTypePositions" />
+            </Principal>
+            <Dependent Role="Positions">
+              <PropertyRef Name="IdTypePositions" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rate_Employees">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+          <End Role="Rate" Type="Self.Rate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="IdEmployees" />
+            </Principal>
+            <Dependent Role="Rate">
+              <PropertyRef Name="IdEmployees" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rate_Positions">
+          <End Role="Positions" Type="Self.Positions" Multiplicity="1" />
+          <End Role="Rate" Type="Self.Rate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Positions">
+              <PropertyRef Name="IdPositions" />
+            </Principal>
+            <Dependent Role="Rate">
+              <PropertyRef Name="IdPositions" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rate_RateType">
+          <End Role="RateType" Type="Self.RateType" Multiplicity="1" />
+          <End Role="Rate" Type="Self.Rate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RateType">
+              <PropertyRef Name="IdRateType" />
+            </Principal>
+            <Dependent Role="Rate">
+              <PropertyRef Name="IdRateType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Status_EmployeeStatusType">
+          <End Role="EmployeeStatusType" Type="Self.EmployeeStatusType" Multiplicity="1" />
+          <End Role="Status" Type="Self.Status" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeStatusType">
+              <PropertyRef Name="IdEmployeeStatusType" />
+            </Principal>
+            <Dependent Role="Status">
+              <PropertyRef Name="IdEmployeeStatusType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище vkr_Otdel_KadrovModelContainer">
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DepartmentType" EntityType="Self.DepartmentType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeStatuses" EntityType="Self.EmployeeStatuses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeStatusType" EntityType="Self.EmployeeStatusType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeVerification" EntityType="Self.EmployeeVerification" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeVerificationResult" EntityType="Self.EmployeeVerificationResult" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HRmanager" EntityType="Self.HRmanager" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MedicalCommission" EntityType="Self.MedicalCommission" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MedicalCommissionType" EntityType="Self.MedicalCommissionType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Positions" EntityType="Self.Positions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rate" EntityType="Self.Rate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RateType" EntityType="Self.RateType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Title" EntityType="Self.Title" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypePositions" EntityType="Self.TypePositions" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Department_DepartmentType" Association="Self.FK_Department_DepartmentType">
+            <End Role="DepartmentType" EntitySet="DepartmentType" />
+            <End Role="Department" EntitySet="Department" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_Category" Association="Self.FK_Employees_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_Title" Association="Self.FK_Employees_Title">
+            <End Role="Title" EntitySet="Title" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeStatuses_Employees" Association="Self.FK_EmployeeStatuses_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="EmployeeStatuses" EntitySet="EmployeeStatuses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeStatuses_Positions" Association="Self.FK_EmployeeStatuses_Positions">
+            <End Role="Positions" EntitySet="Positions" />
+            <End Role="EmployeeStatuses" EntitySet="EmployeeStatuses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeStatuses_Status" Association="Self.FK_EmployeeStatuses_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="EmployeeStatuses" EntitySet="EmployeeStatuses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeVerification_EmployeeVerificationResult" Association="Self.FK_EmployeeVerification_EmployeeVerificationResult">
+            <End Role="EmployeeVerificationResult" EntitySet="EmployeeVerificationResult" />
+            <End Role="EmployeeVerification" EntitySet="EmployeeVerification" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeVerification_MedicalCommission" Association="Self.FK_EmployeeVerification_MedicalCommission">
+            <End Role="MedicalCommission" EntitySet="MedicalCommission" />
+            <End Role="EmployeeVerification" EntitySet="EmployeeVerification" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HRmanager_Category" Association="Self.FK_HRmanager_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="HRmanager" EntitySet="HRmanager" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HRmanager_Title" Association="Self.FK_HRmanager_Title">
+            <End Role="Title" EntitySet="Title" />
+            <End Role="HRmanager" EntitySet="HRmanager" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MedicalCommission_MedicalCommissionType" Association="Self.FK_MedicalCommission_MedicalCommissionType">
+            <End Role="MedicalCommissionType" EntitySet="MedicalCommissionType" />
+            <End Role="MedicalCommission" EntitySet="MedicalCommission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Positions_Department" Association="Self.FK_Positions_Department">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="Positions" EntitySet="Positions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Positions_TypePositions" Association="Self.FK_Positions_TypePositions">
+            <End Role="TypePositions" EntitySet="TypePositions" />
+            <End Role="Positions" EntitySet="Positions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rate_Employees" Association="Self.FK_Rate_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Rate" EntitySet="Rate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rate_Positions" Association="Self.FK_Rate_Positions">
+            <End Role="Positions" EntitySet="Positions" />
+            <End Role="Rate" EntitySet="Rate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rate_RateType" Association="Self.FK_Rate_RateType">
+            <End Role="RateType" EntitySet="RateType" />
+            <End Role="Rate" EntitySet="Rate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Status_EmployeeStatusType" Association="Self.FK_Status_EmployeeStatusType">
+            <End Role="EmployeeStatusType" EntitySet="EmployeeStatusType" />
+            <End Role="Status" EntitySet="Status" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="vkr_Otdel_KadrovModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="IdCategory" />
+          </Key>
+          <Property Name="IdCategory" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TitleCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK_Employees_Category" FromRole="Category" ToRole="Employees" />
+          <NavigationProperty Name="HRmanager" Relationship="Self.FK_HRmanager_Category" FromRole="Category" ToRole="HRmanager" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="IdDepartment" />
+          </Key>
+          <Property Name="IdDepartment" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TitleDepartment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdDepartmentType" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DepartmentType" Relationship="Self.FK_Department_DepartmentType" FromRole="Department" ToRole="DepartmentType" />
+          <NavigationProperty Name="Positions" Relationship="Self.FK_Positions_Department" FromRole="Department" ToRole="Positions" />
+        </EntityType>
+        <EntityType Name="DepartmentType">
+          <Key>
+            <PropertyRef Name="IdDepartmentType" />
+          </Key>
+          <Property Name="IdDepartmentType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TitleDepartmentType" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Department" Relationship="Self.FK_Department_DepartmentType" FromRole="DepartmentType" ToRole="Department" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="IdEmployees" />
+          </Key>
+          <Property Name="IdEmployees" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceNumber" Type="Int32" Nullable="false" />
+          <Property Name="SurName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="NumberPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdCategory" Type="Int32" Nullable="false" />
+          <Property Name="IdTitle" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Category" Relationship="Self.FK_Employees_Category" FromRole="Employees" ToRole="Category" />
+          <NavigationProperty Name="Title" Relationship="Self.FK_Employees_Title" FromRole="Employees" ToRole="Title" />
+          <NavigationProperty Name="EmployeeStatuses" Relationship="Self.FK_EmployeeStatuses_Employees" FromRole="Employees" ToRole="EmployeeStatuses" />
+          <NavigationProperty Name="Rate" Relationship="Self.FK_Rate_Employees" FromRole="Employees" ToRole="Rate" />
+        </EntityType>
+        <EntityType Name="EmployeeStatuses">
+          <Key>
+            <PropertyRef Name="IdEmployeeStatuses" />
+          </Key>
+          <Property Name="IdEmployeeStatuses" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+          <Property Name="IdStatus" Type="Int32" Nullable="false" />
+          <Property Name="IdPosition" Type="Int32" Nullable="false" />
+          <Property Name="ChangeDate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK_EmployeeStatuses_Employees" FromRole="EmployeeStatuses" ToRole="Employees" />
+          <NavigationProperty Name="Positions" Relationship="Self.FK_EmployeeStatuses_Positions" FromRole="EmployeeStatuses" ToRole="Positions" />
+          <NavigationProperty Name="Status" Relationship="Self.FK_EmployeeStatuses_Status" FromRole="EmployeeStatuses" ToRole="Status" />
+        </EntityType>
+        <EntityType Name="EmployeeStatusType">
+          <Key>
+            <PropertyRef Name="IdEmployeeStatusType" />
+          </Key>
+          <Property Name="IdEmployeeStatusType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TitleEmployeeStatusType" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Status" Relationship="Self.FK_Status_EmployeeStatusType" FromRole="EmployeeStatusType" ToRole="Status" />
+        </EntityType>
+        <EntityType Name="EmployeeVerification">
+          <Key>
+            <PropertyRef Name="IdEmployeeVerification" />
+          </Key>
+          <Property Name="IdEmployeeVerification" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdEmployees" Type="Int32" Nullable="false" />
+          <Property Name="StartVerification" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IdHRmanager" Type="Int32" Nullable="false" />
+          <Property Name="Fingerprinting" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PsychophysiologicalExamination" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdMedicalCommission" Type="Int32" Nullable="false" />
+          <Property Name="IdEmployeeVerificationResult" Type="Int32" Nullable="false" />
+          <Property Name="Note" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="EmployeeVerificationResult" Relationship="Self.FK_EmployeeVerification_EmployeeVerificationResult" FromRole="EmployeeVerification" ToRole="EmployeeVerificationResult" />
+          <NavigationProperty Name="MedicalCommission" Relationship="Self.FK_EmployeeVerification_MedicalCommission" FromRole="EmployeeVerification" ToRole="MedicalCommission" />
+        </EntityType>
+        <EntityType Name="EmployeeVerificationResult">
+          <Key>
+            <PropertyRef Name="IdEmployeeVerificationResult" />
+          </Key>
+          <Property Name="IdEmployeeVerificationResult" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeVerificationResult1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="EmployeeVerification" Relationship="Self.FK_EmployeeVerification_EmployeeVerificationResult" FromRole="EmployeeVerificationResult" ToRole="EmployeeVerification" />
+        </EntityType>
+        <EntityType Name="HRmanager">
+          <Key>
+            <PropertyRef Name="IdHRmanager" />
+          </Key>
+          <Property Name="IdHRmanager" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceNumber" Type="Int32" Nullable="false" />
+          <Property Name="SurName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="NumberPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdCategory" Type="Int32" Nullable="false" />
+          <Property Name="IdTitle" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Category" Relationship="Self.FK_HRmanager_Category" FromRole="HRmanager" ToRole="Category" />
+          <NavigationProperty Name="Title" Relationship="Self.FK_HRmanager_Title" FromRole="HRmanager" ToRole="Title" />
+        </EntityType>
+        <EntityType Name="MedicalCommission">
+          <Key>
+            <PropertyRef Name="IdMedicalCommission" />
+          </Key>
+          <Property Name="IdMedicalCommission" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MedicalCommissionTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdMedicalCommissionType" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="EmployeeVerification" Relationship="Self.FK_EmployeeVerification_MedicalCommission" FromRole="MedicalCommission" ToRole="EmployeeVerification" />
+          <NavigationProperty Name="MedicalCommissionType" Relationship="Self.FK_MedicalCommission_MedicalCommissionType" FromRole="MedicalCommission" ToRole="MedicalCommissionType" />
+        </EntityType>
+        <EntityType Name="MedicalCommissionType">
+          <Key>
+            <PropertyRef Name="IdMedicalCommissionType" />
+          </Key>
+          <Property Name="IdMedicalCommissionType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MedicalCommissionType1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="MedicalCommission" Relationship="Self.FK_MedicalCommission_MedicalCommissionType" FromRole="MedicalCommissionType" ToRole="MedicalCommission" />
+        </EntityType>
+        <EntityType Name="Positions">
+          <Key>
+            <PropertyRef Name="IdPositions" />
+          </Key>
+          <Property Name="IdPositions" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ActualName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NameByState" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TotalBid" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="IdTypePositions" Type="Int32" Nullable="false" />
+          <Property Name="IdDepartment" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Department" Relationship="Self.FK_Positions_Department" FromRole="Positions" ToRole="Department" />
+          <NavigationProperty Name="EmployeeStatuses" Relationship="Self.FK_EmployeeStatuses_Positions" FromRole="Positions" ToRole="EmployeeStatuses" />
+          <NavigationProperty Name="TypePositions" Relationship="Self.FK_Positions_TypePositions" FromRole="Positions" ToRole="TypePositions" />
+          <NavigationProperty Name="Rate" Relationship="Self.FK_Rate_Positions" FromRole="Positions" ToRole="Rate" />
+        </EntityType>
+        <EntityType Name="Rate">
+          <Key>
+            <PropertyRef Name="IdRate" />
+          </Key>
+          <Property Name="IdRate" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TitleRate" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="IdPositions" Type="Int32" Nullable="false" />
+          <Property Name="IdEmployees" Type="Int32" Nullable="false" />
+          <Property Name="IdRateType" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK_Rate_Employees" FromRole="Rate" ToRole="Employees" />
+          <NavigationProperty Name="Positions" Relationship="Self.FK_Rate_Positions" FromRole="Rate" ToRole="Positions" />
+          <NavigationProperty Name="RateType" Relationship="Self.FK_Rate_RateType" FromRole="Rate" ToRole="RateType" />
+        </EntityType>
+        <EntityType Name="RateType">
+          <Key>
+            <PropertyRef Name="IdRateType" />
+          </Key>
+          <Property Name="IdRateType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RateTypeTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Rate" Relationship="Self.FK_Rate_RateType" FromRole="RateType" ToRole="Rate" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="IdStatus" />
+          </Key>
+          <Property Name="IdStatus" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TitleStatus" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdEmployeeStatusType" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="EmployeeStatuses" Relationship="Self.FK_EmployeeStatuses_Status" FromRole="Status" ToRole="EmployeeStatuses" />
+          <NavigationProperty Name="EmployeeStatusType" Relationship="Self.FK_Status_EmployeeStatusType" FromRole="Status" ToRole="EmployeeStatusType" />
+        </EntityType>
+        <EntityType Name="Title">
+          <Key>
+            <PropertyRef Name="IdTitle" />
+          </Key>
+          <Property Name="IdTitle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AcademicTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK_Employees_Title" FromRole="Title" ToRole="Employees" />
+          <NavigationProperty Name="HRmanager" Relationship="Self.FK_HRmanager_Title" FromRole="Title" ToRole="HRmanager" />
+        </EntityType>
+        <EntityType Name="TypePositions">
+          <Key>
+            <PropertyRef Name="IdTypePositions" />
+          </Key>
+          <Property Name="IdTypePositions" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypePositions1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Positions" Relationship="Self.FK_Positions_TypePositions" FromRole="TypePositions" ToRole="Positions" />
+        </EntityType>
+        <Association Name="FK_Employees_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="IdCategory" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="IdCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HRmanager_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="HRmanager" Type="Self.HRmanager" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="IdCategory" />
+            </Principal>
+            <Dependent Role="HRmanager">
+              <PropertyRef Name="IdCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Department_DepartmentType">
+          <End Role="DepartmentType" Type="Self.DepartmentType" Multiplicity="1" />
+          <End Role="Department" Type="Self.Department" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DepartmentType">
+              <PropertyRef Name="IdDepartmentType" />
+            </Principal>
+            <Dependent Role="Department">
+              <PropertyRef Name="IdDepartmentType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Positions_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="Positions" Type="Self.Positions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="IdDepartment" />
+            </Principal>
+            <Dependent Role="Positions">
+              <PropertyRef Name="IdDepartment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_Title">
+          <End Role="Title" Type="Self.Title" Multiplicity="1" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Title">
+              <PropertyRef Name="IdTitle" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="IdTitle" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeStatuses_Employees">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+          <End Role="EmployeeStatuses" Type="Self.EmployeeStatuses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="IdEmployees" />
+            </Principal>
+            <Dependent Role="EmployeeStatuses">
+              <PropertyRef Name="IdEmployee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rate_Employees">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+          <End Role="Rate" Type="Self.Rate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="IdEmployees" />
+            </Principal>
+            <Dependent Role="Rate">
+              <PropertyRef Name="IdEmployees" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeStatuses_Positions">
+          <End Role="Positions" Type="Self.Positions" Multiplicity="1" />
+          <End Role="EmployeeStatuses" Type="Self.EmployeeStatuses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Positions">
+              <PropertyRef Name="IdPositions" />
+            </Principal>
+            <Dependent Role="EmployeeStatuses">
+              <PropertyRef Name="IdPosition" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeStatuses_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="1" />
+          <End Role="EmployeeStatuses" Type="Self.EmployeeStatuses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="IdStatus" />
+            </Principal>
+            <Dependent Role="EmployeeStatuses">
+              <PropertyRef Name="IdStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Status_EmployeeStatusType">
+          <End Role="EmployeeStatusType" Type="Self.EmployeeStatusType" Multiplicity="1" />
+          <End Role="Status" Type="Self.Status" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeStatusType">
+              <PropertyRef Name="IdEmployeeStatusType" />
+            </Principal>
+            <Dependent Role="Status">
+              <PropertyRef Name="IdEmployeeStatusType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeVerification_EmployeeVerificationResult">
+          <End Role="EmployeeVerificationResult" Type="Self.EmployeeVerificationResult" Multiplicity="1" />
+          <End Role="EmployeeVerification" Type="Self.EmployeeVerification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeVerificationResult">
+              <PropertyRef Name="IdEmployeeVerificationResult" />
+            </Principal>
+            <Dependent Role="EmployeeVerification">
+              <PropertyRef Name="IdEmployeeVerificationResult" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeVerification_MedicalCommission">
+          <End Role="MedicalCommission" Type="Self.MedicalCommission" Multiplicity="1" />
+          <End Role="EmployeeVerification" Type="Self.EmployeeVerification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MedicalCommission">
+              <PropertyRef Name="IdMedicalCommission" />
+            </Principal>
+            <Dependent Role="EmployeeVerification">
+              <PropertyRef Name="IdMedicalCommission" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HRmanager_Title">
+          <End Role="Title" Type="Self.Title" Multiplicity="1" />
+          <End Role="HRmanager" Type="Self.HRmanager" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Title">
+              <PropertyRef Name="IdTitle" />
+            </Principal>
+            <Dependent Role="HRmanager">
+              <PropertyRef Name="IdTitle" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MedicalCommission_MedicalCommissionType">
+          <End Role="MedicalCommissionType" Type="Self.MedicalCommissionType" Multiplicity="1" />
+          <End Role="MedicalCommission" Type="Self.MedicalCommission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MedicalCommissionType">
+              <PropertyRef Name="IdMedicalCommissionType" />
+            </Principal>
+            <Dependent Role="MedicalCommission">
+              <PropertyRef Name="IdMedicalCommissionType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Positions_TypePositions">
+          <End Role="TypePositions" Type="Self.TypePositions" Multiplicity="1" />
+          <End Role="Positions" Type="Self.Positions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypePositions">
+              <PropertyRef Name="IdTypePositions" />
+            </Principal>
+            <Dependent Role="Positions">
+              <PropertyRef Name="IdTypePositions" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rate_Positions">
+          <End Role="Positions" Type="Self.Positions" Multiplicity="1" />
+          <End Role="Rate" Type="Self.Rate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Positions">
+              <PropertyRef Name="IdPositions" />
+            </Principal>
+            <Dependent Role="Rate">
+              <PropertyRef Name="IdPositions" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rate_RateType">
+          <End Role="RateType" Type="Self.RateType" Multiplicity="1" />
+          <End Role="Rate" Type="Self.Rate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RateType">
+              <PropertyRef Name="IdRateType" />
+            </Principal>
+            <Dependent Role="Rate">
+              <PropertyRef Name="IdRateType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="vkr_Otdel_KadrovEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Category" EntityType="Self.Category" />
+          <EntitySet Name="Department" EntityType="Self.Department" />
+          <EntitySet Name="DepartmentType" EntityType="Self.DepartmentType" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" />
+          <EntitySet Name="EmployeeStatuses" EntityType="Self.EmployeeStatuses" />
+          <EntitySet Name="EmployeeStatusType" EntityType="Self.EmployeeStatusType" />
+          <EntitySet Name="EmployeeVerification" EntityType="Self.EmployeeVerification" />
+          <EntitySet Name="EmployeeVerificationResult" EntityType="Self.EmployeeVerificationResult" />
+          <EntitySet Name="HRmanager" EntityType="Self.HRmanager" />
+          <EntitySet Name="MedicalCommission" EntityType="Self.MedicalCommission" />
+          <EntitySet Name="MedicalCommissionType" EntityType="Self.MedicalCommissionType" />
+          <EntitySet Name="Positions" EntityType="Self.Positions" />
+          <EntitySet Name="Rate" EntityType="Self.Rate" />
+          <EntitySet Name="RateType" EntityType="Self.RateType" />
+          <EntitySet Name="Status" EntityType="Self.Status" />
+          <EntitySet Name="Title" EntityType="Self.Title" />
+          <EntitySet Name="TypePositions" EntityType="Self.TypePositions" />
+          <AssociationSet Name="FK_Employees_Category" Association="Self.FK_Employees_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HRmanager_Category" Association="Self.FK_HRmanager_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="HRmanager" EntitySet="HRmanager" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Department_DepartmentType" Association="Self.FK_Department_DepartmentType">
+            <End Role="DepartmentType" EntitySet="DepartmentType" />
+            <End Role="Department" EntitySet="Department" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Positions_Department" Association="Self.FK_Positions_Department">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="Positions" EntitySet="Positions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_Title" Association="Self.FK_Employees_Title">
+            <End Role="Title" EntitySet="Title" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeStatuses_Employees" Association="Self.FK_EmployeeStatuses_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="EmployeeStatuses" EntitySet="EmployeeStatuses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rate_Employees" Association="Self.FK_Rate_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Rate" EntitySet="Rate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeStatuses_Positions" Association="Self.FK_EmployeeStatuses_Positions">
+            <End Role="Positions" EntitySet="Positions" />
+            <End Role="EmployeeStatuses" EntitySet="EmployeeStatuses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeStatuses_Status" Association="Self.FK_EmployeeStatuses_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="EmployeeStatuses" EntitySet="EmployeeStatuses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Status_EmployeeStatusType" Association="Self.FK_Status_EmployeeStatusType">
+            <End Role="EmployeeStatusType" EntitySet="EmployeeStatusType" />
+            <End Role="Status" EntitySet="Status" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeVerification_EmployeeVerificationResult" Association="Self.FK_EmployeeVerification_EmployeeVerificationResult">
+            <End Role="EmployeeVerificationResult" EntitySet="EmployeeVerificationResult" />
+            <End Role="EmployeeVerification" EntitySet="EmployeeVerification" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeVerification_MedicalCommission" Association="Self.FK_EmployeeVerification_MedicalCommission">
+            <End Role="MedicalCommission" EntitySet="MedicalCommission" />
+            <End Role="EmployeeVerification" EntitySet="EmployeeVerification" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HRmanager_Title" Association="Self.FK_HRmanager_Title">
+            <End Role="Title" EntitySet="Title" />
+            <End Role="HRmanager" EntitySet="HRmanager" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MedicalCommission_MedicalCommissionType" Association="Self.FK_MedicalCommission_MedicalCommissionType">
+            <End Role="MedicalCommissionType" EntitySet="MedicalCommissionType" />
+            <End Role="MedicalCommission" EntitySet="MedicalCommission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Positions_TypePositions" Association="Self.FK_Positions_TypePositions">
+            <End Role="TypePositions" EntitySet="TypePositions" />
+            <End Role="Positions" EntitySet="Positions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rate_Positions" Association="Self.FK_Rate_Positions">
+            <End Role="Positions" EntitySet="Positions" />
+            <End Role="Rate" EntitySet="Rate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rate_RateType" Association="Self.FK_Rate_RateType">
+            <End Role="RateType" EntitySet="RateType" />
+            <End Role="Rate" EntitySet="Rate" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище vkr_Otdel_KadrovModelContainer" CdmEntityContainer="vkr_Otdel_KadrovEntities">
+          <EntitySetMapping Name="Category">
+            <EntityTypeMapping TypeName="vkr_Otdel_KadrovModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="IdCategory" ColumnName="IdCategory" />
+                <ScalarProperty Name="TitleCategory" ColumnName="TitleCategory" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Department">
+            <EntityTypeMapping TypeName="vkr_Otdel_KadrovModel.Department">
+              <MappingFragment StoreEntitySet="Department">
+                <ScalarProperty Name="IdDepartment" ColumnName="IdDepartment" />
+                <ScalarProperty Name="TitleDepartment" ColumnName="TitleDepartment" />
+                <ScalarProperty Name="IdDepartmentType" ColumnName="IdDepartmentType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DepartmentType">
+            <EntityTypeMapping TypeName="vkr_Otdel_KadrovModel.DepartmentType">
+              <MappingFragment StoreEntitySet="DepartmentType">
+                <ScalarProperty Name="IdDepartmentType" ColumnName="IdDepartmentType" />
+                <ScalarProperty Name="TitleDepartmentType" ColumnName="TitleDepartmentType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="vkr_Otdel_KadrovModel.Employees">
+              <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="IdEmployees" ColumnName="IdEmployees" />
+                <ScalarProperty Name="ServiceNumber" ColumnName="ServiceNumber" />
+                <ScalarProperty Name="SurName" ColumnName="SurName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="NumberPhone" ColumnName="NumberPhone" />
+                <ScalarProperty Name="IdCategory" ColumnName="IdCategory" />
+                <ScalarProperty Name="IdTitle" ColumnName="IdTitle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeStatuses">
+            <EntityTypeMapping TypeName="vkr_Otdel_KadrovModel.EmployeeStatuses">
+              <MappingFragment StoreEntitySet="EmployeeStatuses">
+                <ScalarProperty Name="IdEmployeeStatuses" ColumnName="IdEmployeeStatuses" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                <ScalarProperty Name="IdStatus" ColumnName="IdStatus" />
+                <ScalarProperty Name="IdPosition" ColumnName="IdPosition" />
+                <ScalarProperty Name="ChangeDate" ColumnName="ChangeDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeStatusType">
+            <EntityTypeMapping TypeName="vkr_Otdel_KadrovModel.EmployeeStatusType">
+              <MappingFragment StoreEntitySet="EmployeeStatusType">
+                <ScalarProperty Name="IdEmployeeStatusType" ColumnName="IdEmployeeStatusType" />
+                <ScalarProperty Name="TitleEmployeeStatusType" ColumnName="TitleEmployeeStatusType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeVerification">
+            <EntityTypeMapping TypeName="vkr_Otdel_KadrovModel.EmployeeVerification">
+              <MappingFragment StoreEntitySet="EmployeeVerification">
+                <ScalarProperty Name="IdEmployeeVerification" ColumnName="IdEmployeeVerification" />
+                <ScalarProperty Name="IdEmployees" ColumnName="IdEmployees" />
+                <ScalarProperty Name="StartVerification" ColumnName="StartVerification" />
+                <ScalarProperty Name="IdHRmanager" ColumnName="IdHRmanager" />
+                <ScalarProperty Name="Fingerprinting" ColumnName="Fingerprinting" />
+                <ScalarProperty Name="PsychophysiologicalExamination" ColumnName="PsychophysiologicalExamination" />
+                <ScalarProperty Name="IdMedicalCommission" ColumnName="IdMedicalCommission" />
+                <ScalarProperty Name="IdEmployeeVerificationResult" ColumnName="IdEmployeeVerificationResult" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeVerificationResult">
+            <EntityTypeMapping TypeName="vkr_Otdel_KadrovModel.EmployeeVerificationResult">
+              <MappingFragment StoreEntitySet="EmployeeVerificationResult">
+                <ScalarProperty Name="IdEmployeeVerificationResult" ColumnName="IdEmployeeVerificationResult" />
+                <ScalarProperty Name="EmployeeVerificationResult1" ColumnName="EmployeeVerificationResult" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HRmanager">
+            <EntityTypeMapping TypeName="vkr_Otdel_KadrovModel.HRmanager">
+              <MappingFragment StoreEntitySet="HRmanager">
+                <ScalarProperty Name="IdHRmanager" ColumnName="IdHRmanager" />
+                <ScalarProperty Name="ServiceNumber" ColumnName="ServiceNumber" />
+                <ScalarProperty Name="SurName" ColumnName="SurName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="NumberPhone" ColumnName="NumberPhone" />
+                <ScalarProperty Name="IdCategory" ColumnName="IdCategory" />
+                <ScalarProperty Name="IdTitle" ColumnName="IdTitle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MedicalCommission">
+            <EntityTypeMapping TypeName="vkr_Otdel_KadrovModel.MedicalCommission">
+              <MappingFragment StoreEntitySet="MedicalCommission">
+                <ScalarProperty Name="IdMedicalCommission" ColumnName="IdMedicalCommission" />
+                <ScalarProperty Name="MedicalCommissionTitle" ColumnName="MedicalCommissionTitle" />
+                <ScalarProperty Name="IdMedicalCommissionType" ColumnName="IdMedicalCommissionType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MedicalCommissionType">
+            <EntityTypeMapping TypeName="vkr_Otdel_KadrovModel.MedicalCommissionType">
+              <MappingFragment StoreEntitySet="MedicalCommissionType">
+                <ScalarProperty Name="IdMedicalCommissionType" ColumnName="IdMedicalCommissionType" />
+                <ScalarProperty Name="MedicalCommissionType1" ColumnName="MedicalCommissionType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Positions">
+            <EntityTypeMapping TypeName="vkr_Otdel_KadrovModel.Positions">
+              <MappingFragment StoreEntitySet="Positions">
+                <ScalarProperty Name="IdPositions" ColumnName="IdPositions" />
+                <ScalarProperty Name="ActualName" ColumnName="ActualName" />
+                <ScalarProperty Name="NameByState" ColumnName="NameByState" />
+                <ScalarProperty Name="TotalBid" ColumnName="TotalBid" />
+                <ScalarProperty Name="IdTypePositions" ColumnName="IdTypePositions" />
+                <ScalarProperty Name="IdDepartment" ColumnName="IdDepartment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rate">
+            <EntityTypeMapping TypeName="vkr_Otdel_KadrovModel.Rate">
+              <MappingFragment StoreEntitySet="Rate">
+                <ScalarProperty Name="IdRate" ColumnName="IdRate" />
+                <ScalarProperty Name="TitleRate" ColumnName="TitleRate" />
+                <ScalarProperty Name="IdPositions" ColumnName="IdPositions" />
+                <ScalarProperty Name="IdEmployees" ColumnName="IdEmployees" />
+                <ScalarProperty Name="IdRateType" ColumnName="IdRateType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RateType">
+            <EntityTypeMapping TypeName="vkr_Otdel_KadrovModel.RateType">
+              <MappingFragment StoreEntitySet="RateType">
+                <ScalarProperty Name="IdRateType" ColumnName="IdRateType" />
+                <ScalarProperty Name="RateTypeTitle" ColumnName="RateTypeTitle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Status">
+            <EntityTypeMapping TypeName="vkr_Otdel_KadrovModel.Status">
+              <MappingFragment StoreEntitySet="Status">
+                <ScalarProperty Name="IdStatus" ColumnName="IdStatus" />
+                <ScalarProperty Name="TitleStatus" ColumnName="TitleStatus" />
+                <ScalarProperty Name="IdEmployeeStatusType" ColumnName="IdEmployeeStatusType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Title">
+            <EntityTypeMapping TypeName="vkr_Otdel_KadrovModel.Title">
+              <MappingFragment StoreEntitySet="Title">
+                <ScalarProperty Name="IdTitle" ColumnName="IdTitle" />
+                <ScalarProperty Name="Title1" ColumnName="Title" />
+                <ScalarProperty Name="AcademicTitle" ColumnName="AcademicTitle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypePositions">
+            <EntityTypeMapping TypeName="vkr_Otdel_KadrovModel.TypePositions">
+              <MappingFragment StoreEntitySet="TypePositions">
+                <ScalarProperty Name="IdTypePositions" ColumnName="IdTypePositions" />
+                <ScalarProperty Name="TypePositions1" ColumnName="TypePositions" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
