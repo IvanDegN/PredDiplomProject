@@ -24,5 +24,44 @@ namespace PredDiplomProject
         {
             InitializeComponent();
         }
+
+        private void BtnExit_Click(object sender, RoutedEventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            var result = MessageBox.Show("Вы действительно хотите выйти?", "Предупрежедние", MessageBoxButton.OKCancel, MessageBoxImage.Warning, MessageBoxResult.Cancel);
+            if (result == MessageBoxResult.OK)
+            {
+                this.Close();
+                loginForm.Show();
+            }
+
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            //Application.Current.Shutdown();
+        }
+
+        private void BtnShowReports_Click(object sender, RoutedEventArgs e)
+        {
+            Reports reports = new Reports();
+            this.Close();
+            reports.Show();
+        }
+
+        private void BtnSearchStaff_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnEdit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnChooseDepartment_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

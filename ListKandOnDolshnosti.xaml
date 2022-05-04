@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PredDiplomProject"
         mc:Ignorable="d"
-        Title="Список кандидатов на должности" Height="450" Width="800" Icon="img/logo.png">
+        Title="Список кандидатов на должности" Height="450" MinHeight="350" Width="900" MinWidth="800" Icon="img/logo.jpg" FontFamily="Sitka Text" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="33*"></ColumnDefinition>
-            <ColumnDefinition Width="38*"></ColumnDefinition>
-            <ColumnDefinition Width="28*"></ColumnDefinition>
+            <ColumnDefinition Width="264*"></ColumnDefinition>
+            <ColumnDefinition Width="217*"></ColumnDefinition>
+            <ColumnDefinition Width="311*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
@@ -18,7 +18,7 @@
             <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Background="Aqua" Grid.ColumnSpan="3">
-            <Image Source="img\logo.png" HorizontalAlignment="Left"></Image>
+            <Image Source="img\logo.jpg" HorizontalAlignment="Left"></Image>
             <TextBlock Margin="15,0,0,0" Text="Список кандидатов на должности" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" FontFamily="Sitka Text"></TextBlock>
         </Grid>
         <Grid Background="Aqua" Grid.ColumnSpan="3" Grid.Row="2">
@@ -26,7 +26,7 @@
         </Grid>
 
 
-        <DataGrid Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0" Height="300" FontFamily="Sitka Text" Margin="0,24,5,25">
+        <DataGrid Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" FontFamily="Sitka Text" Margin="10,10,10,10" >
             <DataGrid.Columns>
                 <DataGridTextColumn>
                     <DataGridTextColumn.Header>ФИО</DataGridTextColumn.Header>
@@ -45,6 +45,6 @@
                 </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-
+        <Button Grid.Row="1" Grid.Column="3" Height="30" Width="100" Content="Назад" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10" FontSize="15" Name="BtnBack" Click="BtnBack_Click"></Button>
     </Grid>
 </Window>

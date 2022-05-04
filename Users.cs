@@ -12,32 +12,19 @@ namespace PredDiplomProject
     using System;
     using System.Collections.Generic;
     
-    public partial class Employees
+    public partial class Users
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Employees()
+        public Users()
         {
-            this.EmployeeStatuses = new HashSet<EmployeeStatuses>();
-            this.Rate = new HashSet<Rate>();
+            this.Employees = new HashSet<Employees>();
         }
     
-        public int IdEmployees { get; set; }
-        public int ServiceNumber { get; set; }
-        public string SurName { get; set; }
-        public string Name { get; set; }
-        public string MiddleName { get; set; }
-        public System.DateTime DateOfBirth { get; set; }
-        public string NumberPhone { get; set; }
-        public int IdCategory { get; set; }
-        public int IdTitle { get; set; }
         public int IdUsers { get; set; }
+        public string Login { get; set; }
+        public string Password { get; set; }
     
-        public virtual Category Category { get; set; }
-        public virtual Title Title { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EmployeeStatuses> EmployeeStatuses { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Rate> Rate { get; set; }
-        public virtual Users Users { get; set; }
+        public virtual ICollection<Employees> Employees { get; set; }
     }
 }

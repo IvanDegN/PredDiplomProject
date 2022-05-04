@@ -42,5 +42,6 @@ namespace PredDiplomProject
         public virtual DbSet<Status> Status { get; set; }
         public virtual DbSet<Title> Title { get; set; }
         public virtual DbSet<TypePositions> TypePositions { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PredDiplomProject"
         mc:Ignorable="d"
-        Title="Ставки сотрудника" Height="450" Width="800" Icon="img/logo.png">
+        Title="Ставки сотрудника" Height="450" Width="800" Icon="img/logo.jpg">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="158*"></ColumnDefinition>
@@ -20,7 +20,7 @@
             <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Background="Aqua" Grid.ColumnSpan="5">
-            <Image Source="img\logo.png" HorizontalAlignment="Left"></Image>
+            <Image Source="img\logo.jpg" HorizontalAlignment="Left"></Image>
             <TextBlock Margin="15,0,0,0" Text="Ставки сотрудника" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" FontFamily="Sitka Text"></TextBlock>
         </Grid>
         <Grid Background="Aqua" Grid.ColumnSpan="5" Grid.Row="2">

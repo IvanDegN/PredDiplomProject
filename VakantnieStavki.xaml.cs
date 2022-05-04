@@ -23,5 +23,12 @@ namespace PredDiplomProject
         {
             InitializeComponent();
         }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            Reports reports = new Reports();
+            this.Close();
+            reports.Show();
+        }
     }
 }

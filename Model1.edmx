@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище vkr_Otdel_KadrovModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище vkr_Otdel_KadrovModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="IdCategory" />
@@ -40,6 +40,7 @@
           <Property Name="NumberPhone" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="IdCategory" Type="int" Nullable="false" />
           <Property Name="IdTitle" Type="int" Nullable="false" />
+          <Property Name="IdUsers" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="EmployeeStatuses">
           <Key>
@@ -159,6 +160,14 @@
           <Property Name="IdTypePositions" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TypePositions" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="IdUsers" />
+          </Key>
+          <Property Name="IdUsers" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <Association Name="FK_Department_DepartmentType">
           <End Role="DepartmentType" Type="Self.DepartmentType" Multiplicity="1" />
           <End Role="Department" Type="Self.Department" Multiplicity="*" />
@@ -192,6 +201,18 @@
             </Principal>
             <Dependent Role="Employees">
               <PropertyRef Name="IdTitle" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IdUsers" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="IdUsers" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -381,6 +402,7 @@
           <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Title" EntityType="Self.Title" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TypePositions" EntityType="Self.TypePositions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Department_DepartmentType" Association="Self.FK_Department_DepartmentType">
             <End Role="DepartmentType" EntitySet="DepartmentType" />
             <End Role="Department" EntitySet="Department" />
@@ -391,6 +413,10 @@
           </AssociationSet>
           <AssociationSet Name="FK_Employees_Title" Association="Self.FK_Employees_Title">
             <End Role="Title" EntitySet="Title" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_Users" Association="Self.FK_Employees_Users">
+            <End Role="Users" EntitySet="Users" />
             <End Role="Employees" EntitySet="Employees" />
           </AssociationSet>
           <AssociationSet Name="FK_EmployeeStatuses_Employees" Association="Self.FK_EmployeeStatuses_Employees">
@@ -450,8 +476,7 @@
             <End Role="Status" EntitySet="Status" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="vkr_Otdel_KadrovModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -499,6 +524,8 @@
           <NavigationProperty Name="Title" Relationship="Self.FK_Employees_Title" FromRole="Employees" ToRole="Title" />
           <NavigationProperty Name="EmployeeStatuses" Relationship="Self.FK_EmployeeStatuses_Employees" FromRole="Employees" ToRole="EmployeeStatuses" />
           <NavigationProperty Name="Rate" Relationship="Self.FK_Rate_Employees" FromRole="Employees" ToRole="Rate" />
+          <Property Name="IdUsers" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Users" Relationship="vkr_Otdel_KadrovModel.FK_Employees_Users" FromRole="Employees" ToRole="Users" />
         </EntityType>
         <EntityType Name="EmployeeStatuses">
           <Key>
@@ -933,7 +960,33 @@
             <End Role="RateType" EntitySet="RateType" />
             <End Role="Rate" EntitySet="Rate" />
           </AssociationSet>
+          <EntitySet Name="Users" EntityType="vkr_Otdel_KadrovModel.Users" />
+          <AssociationSet Name="FK_Employees_Users" Association="vkr_Otdel_KadrovModel.FK_Employees_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="IdUsers" />
+          </Key>
+          <Property Name="IdUsers" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Login" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Employees" Relationship="vkr_Otdel_KadrovModel.FK_Employees_Users" FromRole="Users" ToRole="Employees" />
+        </EntityType>
+        <Association Name="FK_Employees_Users">
+          <End Type="vkr_Otdel_KadrovModel.Users" Role="Users" Multiplicity="1" />
+          <End Type="vkr_Otdel_KadrovModel.Employees" Role="Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IdUsers" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="IdUsers" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -968,6 +1021,7 @@
           <EntitySetMapping Name="Employees">
             <EntityTypeMapping TypeName="vkr_Otdel_KadrovModel.Employees">
               <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="IdUsers" ColumnName="IdUsers" />
                 <ScalarProperty Name="IdEmployees" ColumnName="IdEmployees" />
                 <ScalarProperty Name="ServiceNumber" ColumnName="ServiceNumber" />
                 <ScalarProperty Name="SurName" ColumnName="SurName" />
@@ -1108,6 +1162,15 @@
               <MappingFragment StoreEntitySet="TypePositions">
                 <ScalarProperty Name="IdTypePositions" ColumnName="IdTypePositions" />
                 <ScalarProperty Name="TypePositions1" ColumnName="TypePositions" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="vkr_Otdel_KadrovModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="IdUsers" ColumnName="IdUsers" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

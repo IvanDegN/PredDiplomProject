@@ -5,69 +5,56 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PredDiplomProject"
         mc:Ignorable="d"
-        Title="Главное меню" Height="480" Width="800" Icon="img/logo.png">
+        Title="Главное меню" Height="480" Width="800" Icon="img/logo.jpg" FontFamily="Sitka Text" WindowStartupLocation="CenterScreen" MinWidth="700" MinHeight="380" Closing="Window_Closing">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="33*"></ColumnDefinition>
-            <ColumnDefinition Width="38*"></ColumnDefinition>
-            <ColumnDefinition Width="28*"></ColumnDefinition>
+            <ColumnDefinition Width="88*"></ColumnDefinition>
+            <ColumnDefinition Width="83*"></ColumnDefinition>
+            <ColumnDefinition Width="93*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Background="Aqua" Grid.ColumnSpan="3">
-            <Image Source="img\logo.png" HorizontalAlignment="Left"></Image>
-            <TextBlock Text="Отдел кадров предприятия - Отдел 2.0 " VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" FontFamily="Sitka Text"></TextBlock>
+            <Image Source="img\logo.jpg" HorizontalAlignment="Left"></Image>
+            <TextBlock Text="Отдел кадров предприятия - Отдел 2.0 " VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" ></TextBlock>
         </Grid>
-        <Grid Background="Aqua" Grid.ColumnSpan="3" Grid.Row="2">
-            <TextBlock Text="Ivan Degtyannikov copyright © 2022" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" FontFamily="Sitka Text"></TextBlock>
+        <Grid Background="Aqua" Grid.ColumnSpan="3" Grid.Row="3">
+            <TextBlock Text="Ivan Degtyannikov copyright © 2022" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" ></TextBlock>
         </Grid>
 
-        <Grid Grid.Row="1" Margin="5,0,5,0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="30"></RowDefinition>
-                <RowDefinition Height="50"></RowDefinition>
-                <RowDefinition Height="50"></RowDefinition>
-                <RowDefinition Height="50"></RowDefinition>
-                <RowDefinition Height="40"></RowDefinition>
-                <RowDefinition Height="30"></RowDefinition>
-                <RowDefinition Height="50"></RowDefinition>
-                <RowDefinition Height="30"></RowDefinition>
 
-            </Grid.RowDefinitions>
-            <Label Content="Выбрать подразделение:" HorizontalAlignment="Left" Grid.Row="0" VerticalAlignment="Top" FontFamily="Sitka Text"></Label>
-            <ComboBox Grid.Row="1" Height="30" FontFamily="Sitka Text"></ComboBox>
-            <Button Grid.Row="2" Height="30" Content="Открыть отчёт Свободные ставки" FontFamily="Sitka Text"></Button>
-            <Button Grid.Row="3" Height="30" Content="Открыть отчёт Кандидаты" FontFamily="Sitka Text"></Button>
-            <Button Grid.Row="4" Height="30" Content="Открыть отчёт Сотрудники" FontFamily="Sitka Text"></Button>
-            <Label Grid.Row="5" Content="Табельный номер или ФИО сотрудника:" FontFamily="Sitka Text"/>
-            <TextBox Grid.Row="6" Height="30"></TextBox>
-            <Button Grid.Row="7" Height="30" Content="Поиск сотрудника" FontFamily="Sitka Text"></Button>
-        </Grid>
-        <Grid Grid.Row="1" Grid.Column="1" Margin="5,0,5,0" >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
+        <Menu  Grid.Column="0"  Grid.Row="1" Grid.ColumnSpan="3" HorizontalContentAlignment="Center">
+            <MenuItem Header="Отчёты">
+                <MenuItem Header="Отчёт Свободные ставки"></MenuItem>
+                <MenuItem Header="Отчёт Кандидаты"></MenuItem>
+                <MenuItem Header="Отчёт Сотрудники"></MenuItem>
+                <MenuItem Header="Отчёт Штатное расписание"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Поиск сотрудника"></MenuItem>
+            <MenuItem Header="Редактирование">
+                <MenuItem Header="Редактирование структрурных подразделений"></MenuItem>
+                <MenuItem Header="Редактирование должностей"></MenuItem>
+                <MenuItem Header="Редактирование сотрудников"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Выбрать подразделение"></MenuItem>
+            <MenuItem></MenuItem>
+        </Menu>
+        <Grid Grid.Row="2" Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="50"></RowDefinition>
-                <RowDefinition Height="50"></RowDefinition>
-                <RowDefinition Height="50"></RowDefinition>
-                <RowDefinition Height="50"></RowDefinition>
-                <RowDefinition Height="50"></RowDefinition>
-                <RowDefinition Height="50"></RowDefinition>
-                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <TextBlock Text="Начало периода:" FontFamily="Sitka Text"></TextBlock>
-            <TextBox Height="30" VerticalAlignment="Bottom" FontFamily="Sitka Text"></TextBox>
-            <TextBlock Grid.Column="1" Text="Конец периода:" FontFamily="Sitka Text"></TextBlock>
-            <TextBox Grid.Column="1" Height="30" VerticalAlignment="Bottom" Margin="16,0,0,0"/>
-            <Button Content="Редактирование структурных подразделений" Grid.ColumnSpan="2" Grid.Row="1" Height="30" FontFamily="Sitka Text"></Button>
-            <Button Content="Редактирование должностей" Grid.ColumnSpan="2" Grid.Row="2" Height="30" FontFamily="Sitka Text"></Button>
-            <Button Content="Редактирование сотрудников" Grid.ColumnSpan="2" Grid.Row="3" Height="30" FontFamily="Sitka Text"></Button>
-            <Button Content="Открыть отчёт Штатное расписание" Grid.ColumnSpan="2" Grid.Row="4" Height="30" FontFamily="Sitka Text"></Button>
+            <Button Height="30"  Content="Отчёты" FontSize="15" Name="BtnShowReports" Click="BtnShowReports_Click"></Button>
+            <Button Height="30"  Content="Поиск сотрудника" Grid.Row="1" FontSize="15" Name="BtnSearchStaff" Click="BtnSearchStaff_Click"></Button>
+            <Button Height="30"  Content="Редактирование" Grid.Row="2" FontSize="15" Name="BtnEdit" Click="BtnEdit_Click"></Button>
+            <Button Height="30"  Content="Выбрать подразделение" Grid.Row="3" FontSize="15" Name="BtnChooseDepartment" Click="BtnChooseDepartment_Click"></Button>
         </Grid>
+        <Button Grid.Column="2" Grid.Row="2" Height="30" Width="100" Content="Выйти" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,10,10" HorizontalContentAlignment="Center" FontSize="15" Name="BtnExit" Click="BtnExit_Click"></Button>
     </Grid>
 </Window>

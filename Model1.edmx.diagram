@@ -39,6 +39,8 @@
         <AssociationConnector Association="vkr_Otdel_KadrovModel.FK_Positions_TypePositions" ManuallyRouted="false" />
         <AssociationConnector Association="vkr_Otdel_KadrovModel.FK_Rate_Positions" ManuallyRouted="false" />
         <AssociationConnector Association="vkr_Otdel_KadrovModel.FK_Rate_RateType" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="vkr_Otdel_KadrovModel.Users" Width="1.5" PointX="12.375" PointY="11.875" />
+        <AssociationConnector Association="vkr_Otdel_KadrovModel.FK_Employees_Users" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

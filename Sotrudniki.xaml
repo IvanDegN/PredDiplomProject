@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PredDiplomProject"
         mc:Ignorable="d"
-        Title="Сотрудники" Height="450" Width="800" Icon="img/logo.png">
+        Title="Сотрудники" Height="450" Width="800" Icon="img/logo.jpg">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="33*"></ColumnDefinition>
@@ -18,7 +18,7 @@
             <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Background="Aqua" Grid.ColumnSpan="3">
-            <Image Source="img\logo.png" HorizontalAlignment="Left"></Image>
+            <Image Source="img\logo.jpg" HorizontalAlignment="Left"></Image>
             <TextBlock Margin="15,0,0,0" Text="Сотрудники" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" FontFamily="Sitka Text"></TextBlock>
         </Grid>
         <Grid Background="Aqua" Grid.ColumnSpan="3" Grid.Row="2">
@@ -27,10 +27,10 @@
 
         <Grid Grid.Row="1" Margin="5,0,5,0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="50"></RowDefinition>
-                <RowDefinition Height="50"></RowDefinition>
-                <RowDefinition Height="50"></RowDefinition>
-                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
                 <RowDefinition Height="30"></RowDefinition>
                 <RowDefinition Height="30"></RowDefinition>
                 <RowDefinition Height="30"></RowDefinition>
@@ -48,24 +48,24 @@
         </Grid>
         <Grid Grid.Row="1" Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="50"></RowDefinition>
-                <RowDefinition Height="50"></RowDefinition>
-                <RowDefinition Height="50"></RowDefinition>
-                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
                 <RowDefinition Height="30"></RowDefinition>
                 <RowDefinition Height="30"></RowDefinition>
                 <RowDefinition Height="30"></RowDefinition>
                 <RowDefinition Height="30"></RowDefinition>
             </Grid.RowDefinitions>
-            <TextBox Grid.Row="0"></TextBox>
-            <TextBox Grid.Row="1"></TextBox>
-            <TextBox Grid.Row="2"></TextBox>
-            <TextBox Grid.Row="3"></TextBox>
-            <TextBox Grid.Row="4"></TextBox>
-            <TextBox Grid.Row="5"></TextBox>
-            <TextBox Grid.Row="6"></TextBox>
-            <TextBox Grid.Row="7"></TextBox>
-            <TextBox Grid.Row="8"></TextBox>
+            <TextBox Grid.Row="0" Margin="5"></TextBox>
+            <TextBox Grid.Row="1" Margin="5"></TextBox>
+            <TextBox Grid.Row="2" Margin="5"></TextBox>
+            <TextBox Grid.Row="3" Margin="5"></TextBox>
+            <TextBox Grid.Row="4" Margin="5"></TextBox>
+            <TextBox Grid.Row="5" Margin="5"></TextBox>
+            <TextBox Grid.Row="6" Margin="5"></TextBox>
+            <TextBox Grid.Row="7" Margin="5"></TextBox>
+            <TextBox Grid.Row="8" Margin="5"></TextBox>
         </Grid>
     </Grid>
 </Window>
