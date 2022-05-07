@@ -51,17 +51,23 @@ namespace PredDiplomProject
 
         private void BtnSearchStaff_Click(object sender, RoutedEventArgs e)
         {
-
+            SearchStaff searchStaff = new SearchStaff();
+            this.Close();
+            searchStaff.Show();
         }
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
-
+            EditWindow editWindow = new EditWindow();
+            this.Close();
+            editWindow.Show();
         }
 
         private void BtnChooseDepartment_Click(object sender, RoutedEventArgs e)
         {
-
+            ChooseDepartment chooseDepartment = new ChooseDepartment();
+            this.Close();
+            chooseDepartment.Show();
         }
     }
 }

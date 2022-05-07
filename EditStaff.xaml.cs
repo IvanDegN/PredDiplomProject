@@ -15,30 +15,35 @@ using System.Windows.Shapes;
 namespace PredDiplomProject
 {
     /// <summary>
-    /// Логика взаимодействия для Raspisanie.xaml
+    /// Логика взаимодействия для EditStaff.xaml
     /// </summary>
-    public partial class Raspisanie : Window
+    public partial class EditStaff : Window
     {
-        public Raspisanie()
+        public EditStaff()
         {
             InitializeComponent();
         }
 
-        private void MenuItemPrint_Click(object sender, RoutedEventArgs e)
+        private void EditImage_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void MenuItemSave_Click(object sender, RoutedEventArgs e)
+        private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void MenuItemGoBack_Click(object sender, RoutedEventArgs e)
+        private void BtnCancelEdit_Click(object sender, RoutedEventArgs e)
         {
-            Reports reports = new Reports();
+
+        }
+
+        private void BtnGoBack_Click(object sender, RoutedEventArgs e)
+        {
+            EditStaffs editStaffs = new EditStaffs();
             this.Close();
-            reports.Show();
+            editStaffs.Show();
         }
     }
 }

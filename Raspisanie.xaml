@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PredDiplomProject"
         mc:Ignorable="d"
-        Title="Расписание" Height="450" Width="1036.982" Icon="img/logo.jpg">
+        Title="Расписание" Height="450" Width="1036.982" Icon="img/logo.jpg" WindowStartupLocation="CenterScreen" FontFamily="Sitka Text">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="33*"></ColumnDefinition>
@@ -14,6 +14,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
@@ -21,12 +22,18 @@
             <Image Source="img\logo.jpg" HorizontalAlignment="Left"></Image>
             <TextBlock Margin="15,0,0,0" Text="Штатное расписание" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" FontFamily="Sitka Text"></TextBlock>
         </Grid>
-        <Grid Background="Aqua" Grid.ColumnSpan="3" Grid.Row="2">
+        <Grid Background="Aqua" Grid.ColumnSpan="3" Grid.Row="3">
             <TextBlock Text="Ivan Degtyannikov copyright © 2022" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" FontFamily="Sitka Text"></TextBlock>
         </Grid>
-
-
-        <DataGrid Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0" Height="300" FontFamily="Sitka Text" Margin="0,24,5,25">
+        <Menu Grid.Row="1" Grid.ColumnSpan="3">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Сохранить как..." Name="MenuItemSave" Click="MenuItemSave_Click"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Печать" Name="MenuItemPrint" Click="MenuItemPrint_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Назад" Name="MenuItemGoBack" Click="MenuItemGoBack_Click"></MenuItem>
+        </Menu>
+        <DataGrid Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="0" FontFamily="Sitka Text" Margin="5">
             <DataGrid.Columns>
                 <DataGridTextColumn>
                     <DataGridTextColumn.Header>Наименование по штату</DataGridTextColumn.Header>

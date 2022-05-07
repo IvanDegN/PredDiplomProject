@@ -15,13 +15,25 @@ using System.Windows.Shapes;
 namespace PredDiplomProject
 {
     /// <summary>
-    /// Логика взаимодействия для StatusSotr.xaml
+    /// Логика взаимодействия для EditStaffs.xaml
     /// </summary>
-    public partial class StatusSotr : Window
+    public partial class EditStaffs : Window
     {
-        public StatusSotr()
+        public EditStaffs()
         {
             InitializeComponent();
+        }
+
+        private void BtnGoBack_Click(object sender, RoutedEventArgs e)
+        {
+            EditWindow editWindow = new EditWindow();
+            this.Close();
+            editWindow.Show();
+        }
+
+        private void BtnSave_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

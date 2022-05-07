@@ -15,20 +15,35 @@ using System.Windows.Shapes;
 namespace PredDiplomProject
 {
     /// <summary>
-    /// Логика взаимодействия для Sotrudniki.xaml
+    /// Логика взаимодействия для SearchStaff.xaml
     /// </summary>
-    public partial class Sotrudniki : Window
+    public partial class SearchStaff : Window
     {
-        public Sotrudniki()
+        public SearchStaff()
         {
             InitializeComponent();
         }
 
+        private void TbSearchStaff_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void CbSort_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void CbFilter_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
         private void MenuItemGoBack_Click(object sender, RoutedEventArgs e)
         {
-            Reports reports = new Reports();
+            MainWindow mainWindow = new MainWindow();
             this.Close();
-            reports.Show();
+            mainWindow.Show();
         }
 
         private void MenuItemSave_Click(object sender, RoutedEventArgs e)

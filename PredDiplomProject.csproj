@@ -67,6 +67,9 @@
     <Compile Include="Category.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="ChooseDepartment.xaml.cs">
+      <DependentUpon>ChooseDepartment.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Department.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -75,6 +78,15 @@
     </Compile>
     <Compile Include="Dolshnosti.xaml.cs">
       <DependentUpon>Dolshnosti.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditStaff.xaml.cs">
+      <DependentUpon>EditStaff.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditStaffs.xaml.cs">
+      <DependentUpon>EditStaffs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditWindow.xaml.cs">
+      <DependentUpon>EditWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Employees.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -140,20 +152,23 @@
     <Compile Include="Reports.xaml.cs">
       <DependentUpon>Reports.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SearchStaff.xaml.cs">
+      <DependentUpon>SearchStaff.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Sotrudniki.xaml.cs">
       <DependentUpon>Sotrudniki.xaml</DependentUpon>
     </Compile>
     <Compile Include="Status.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="StatusSotr.xaml.cs">
-      <DependentUpon>StatusSotr.xaml</DependentUpon>
+    <Compile Include="EditPositions.xaml.cs">
+      <DependentUpon>EditPositions.xaml</DependentUpon>
     </Compile>
     <Compile Include="Stavki.xaml.cs">
       <DependentUpon>Stavki.xaml</DependentUpon>
     </Compile>
-    <Compile Include="StructPodrazdelenie.xaml.cs">
-      <DependentUpon>StructPodrazdelenie.xaml</DependentUpon>
+    <Compile Include="EditDepartments.xaml.cs">
+      <DependentUpon>EditDepartments.xaml</DependentUpon>
     </Compile>
     <Compile Include="Title.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -167,7 +182,23 @@
     <Compile Include="VakantnieStavki.xaml.cs">
       <DependentUpon>VakantnieStavki.xaml</DependentUpon>
     </Compile>
+    <Page Include="ChooseDepartment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Dolshnosti.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditStaff.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditStaffs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -203,11 +234,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="SearchStaff.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Sotrudniki.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="StatusSotr.xaml">
+    <Page Include="EditPositions.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -215,7 +250,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="StructPodrazdelenie.xaml">
+    <Page Include="EditDepartments.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
