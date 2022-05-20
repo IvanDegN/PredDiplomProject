@@ -20,7 +20,7 @@
         </Grid.RowDefinitions>
         <Grid Background="Aqua" Grid.ColumnSpan="3">
             <Image Source="img\logo.jpg" HorizontalAlignment="Left"></Image>
-            <TextBlock Text="Отдел кадров предприятия - Отдел 2.0 " VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" ></TextBlock>
+            <TextBlock Text="Отдел кадров предприятия" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" ></TextBlock>
         </Grid>
         <Grid Background="Aqua" Grid.ColumnSpan="3" Grid.Row="3">
             <TextBlock Text="Ivan Degtyannikov copyright © 2022" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" ></TextBlock>

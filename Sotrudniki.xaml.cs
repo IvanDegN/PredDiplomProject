@@ -22,6 +22,8 @@ namespace PredDiplomProject
         public Sotrudniki()
         {
             InitializeComponent();
+            GirdSotrudniki.ItemsSource = DB.db.Employees.ToList();
+            
         }
 
         private void MenuItemGoBack_Click(object sender, RoutedEventArgs e)

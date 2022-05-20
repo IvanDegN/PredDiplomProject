@@ -33,8 +33,15 @@
             </MenuItem>
             <MenuItem Header="Назад" Name="MenuItemGoBack" Click="MenuItemGoBack_Click"></MenuItem>
         </Menu>
-        <DataGrid Grid.Row="2" Grid.ColumnSpan="3" Margin="5">
+        <DataGrid Grid.Row="2" Grid.ColumnSpan="3" Margin="5" Name="GirdSotrudniki" AutoGenerateColumns="False">
             <DataGrid.Columns>
+                <DataGridTextColumn Header="Табельный номер" Binding="{Binding Path=ServiceNumber}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding Path=SurName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Path=Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Отчество" Binding="{Binding Path=MiddleName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата рождения" Binding="{Binding Path=DateOfBirth}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Номер телефона" Binding="{Binding Path=NumberPhone}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Должность" Binding="{Binding Path=Category}"></DataGridTextColumn>
                 <DataGridTemplateColumn Width="1*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
